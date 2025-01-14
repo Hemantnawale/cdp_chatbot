@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CDP Support Chatbot</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="platform">Select Platform:</label>
+        <select id="platform" name="platform">
+            <option value="segment">Segment</option>
+            <option value="mparticle">mParticle</option>
+            <option value="lytics">Lytics</option>
+            <option value="zeotap">Zeotap</option>
+        </select>
+        <br><br>
+        <label for="question">Your Question:</label><br>
+        <textarea id="question" name="question" rows="4" cols="50"></textarea><br><br>
+        <button type="submit">Ask</button>
+    </form>
+    <h3>Response:</h3>
+    <p>{{ response }}</p>
+</body>
+</html>
